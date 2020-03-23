@@ -2,7 +2,7 @@
 As described [here](https://tech.amikelive.com/node-718/what-object-categories-labels-are-in-coco-dataset/), the original research paper has 91 object classes while the published dataset only had 80 classes. This simple repo provides the mapping between the two intersecting sets of classes. 
 
 ## Why you might need it
-Some predict functions might output their classes according to the 91 classes indices (for example, when running `detector test` on COCO-pretrained Yolo with [darknet](https://github.com/pjreddie/darknet)), even though they were trained on 80 classes, for coco evaluation. You might need to map the idx between the two sets.  
+Some predict functions might output their classes according to the 91 classes indices for purpose of coco eval (for example, when running `detector test` on COCO-pretrained Yolo with [darknet](https://github.com/pjreddie/darknet)), even though they were trained on 80 classes. You might need to map the idx between the two sets.  
 
 ## The 2 sets of classes
 The `*.names` files contain the list of classes for each set. Note that even some of the class names are different, for example "aeroplane" vs "airplane". These differences are hardcoded in `map_coco_classes.py`.  

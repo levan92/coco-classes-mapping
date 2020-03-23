@@ -23,7 +23,14 @@ for small_i, cl in enumerate(lines80):
     if cl in manual_mapping:
         cl = manual_mapping[cl]
     small2large[small_i+1] = classes91.index(cl) + 1
-
+print('80 map to 91')
 print(small2large)
-with open('coco_mapping.json','w') as f:
+
+large2small = {v:k for k,v in small2large.items()}
+print('91 map to 80')
+print(large2small)
+
+with open('coco_mapping_80to91.json','w') as f:
     json.dump(small2large, f)
+with open('coco_mapping_91to80.json','w') as f:
+    json.dump(large2small, f)
